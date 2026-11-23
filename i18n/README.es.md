@@ -162,12 +162,7 @@ Ponytail es un solo prompt: [`skills/ponytail/SKILL.md`](../skills/ponytail/SKIL
 
 **Codex:**
 
-```bash
-codex plugin marketplace add DietrichGebert/ponytail
-codex plugin add ponytail@ponytail
-```
-
-Después abre `/hooks` en Codex, confía en sus dos hooks de ciclo de vida y empieza un hilo nuevo.
+Para instalar la variante de este fork en Codex, sigue las [instrucciones de instalación](../INSTALL.md#codex).
 
 **Cualquier otro agente:** copia [`AGENTS.md`](../AGENTS.md) en tu proyecto, o pídele a tu agente que instale [`skills/ponytail/SKILL.md`](../skills/ponytail/SKILL.md) como skill. Paso a paso para Copilot, Cursor, OpenCode, Gemini y el resto (en inglés): **[INSTALL.md](../INSTALL.md)**.
 
@@ -175,7 +170,7 @@ Eso era todo. Estaría orgulloso. No lo va a decir.
 
 Activo en cada sesión, con un puñado de comandos (ver [Comandos](#commands)). `/ponytail ultra` existe para cuando el código te ha ofendido personalmente. El texto de inicio y de cambio de modo muestra el modo actual.
 
-Instala ponytail solo desde `DietrichGebert/ponytail` en GitHub o `@dietrichgebert/ponytail` en npm. Nunca incluye archivos `.exe` ni `.dll`; una copia que los incluya no es mía.
+El proyecto original se distribuye desde `DietrichGebert/ponytail` en GitHub y `@dietrichgebert/ponytail` en npm.
 
 <a id="commands"></a>
 ## Comandos

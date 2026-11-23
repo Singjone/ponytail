@@ -162,12 +162,7 @@ Ponytail 就是一段提示词：[`skills/ponytail/SKILL.md`](../skills/ponytail
 
 **Codex：**
 
-```bash
-codex plugin marketplace add DietrichGebert/ponytail
-codex plugin add ponytail@ponytail
-```
-
-然后在 Codex 里打开 `/hooks`，信任它的两个生命周期 hook，再开一个新线程。
+这个 Fork 的 Codex 版本请按[安装说明](../INSTALL.md#codex)操作。
 
 **其他任何智能体：**把 [`AGENTS.md`](../AGENTS.md) 复制到你的项目里，或者让你的智能体把 [`skills/ponytail/SKILL.md`](../skills/ponytail/SKILL.md) 安装为 skill。Copilot、Cursor、OpenCode、Gemini 等的分步安装说明（英文）：**[INSTALL.md](../INSTALL.md)**。
 
@@ -175,7 +170,7 @@ codex plugin add ponytail@ponytail
 
 每个会话都会启用，另外有几个命令（见[命令](#commands)）。`/ponytail ultra` 是为代码库把你个人惹毛了的时候准备的。启动和切换模式时会显示当前模式。
 
-只从 GitHub 上的 `DietrichGebert/ponytail` 或 npm 上的 `@dietrichgebert/ponytail` 安装 ponytail。它从不包含 `.exe` 或 `.dll` 文件；包含这些文件的副本不是我的。
+上游 Ponytail 发布于 GitHub 的 `DietrichGebert/ponytail` 和 npm 的 `@dietrichgebert/ponytail`。
 
 <a id="commands"></a>
 ## 命令

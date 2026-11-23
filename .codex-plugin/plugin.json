@@ -1,7 +1,7 @@
 {
   "name": "ponytail",
   "version": "5.3.3",
-  "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
+  "description": "Explore requirements, choose a design, make the smallest complete change, and verify it.",
   "author": {
     "name": "Dietrich Gebert",
     "url": "https://github.com/DietrichGebert"
@@ -13,16 +13,16 @@
   "skills": "./skills/",
   "hooks": "./hooks/claude-codex-hooks.json",
   "interface": {
-    "displayName": "Ponytail",
-    "shortDescription": "Lazy senior developer mode",
-    "longDescription": "Prefer YAGNI, the standard library, native platform features, and the smallest correct implementation.",
+    "displayName": "Ponytail Staged Workflow",
+    "shortDescription": "Explore, design, implement, and verify",
+    "longDescription": "Explore the task and architecture first, apply Ponytail's reuse and YAGNI principles during implementation, and verify the final change.",
     "developerName": "Dietrich Gebert",
     "category": "Productivity",
     "capabilities": ["Instructions", "Lifecycle hooks"],
     "websiteURL": "https://github.com/DietrichGebert/ponytail",
     "defaultPrompt": [
-      "Use Ponytail mode for this task.",
-      "Review this diff for over-engineering.",
+      "Explore the requirements and propose a design before editing.",
+      "Review this diff for correctness, risks, and unnecessary code.",
       "Find the smallest correct implementation."
     ],
     "brandColor": "#111111",

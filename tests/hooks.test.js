@@ -12,7 +12,7 @@ const root = path.join(__dirname, '..');
 // paths pass, paths carrying shell metacharacters are rejected so they never get
 // embedded in a shell command.
 const { DEFAULT_MODE, getDefaultMode, isShellSafe, writeDefaultMode } = require('../hooks/ponytail-config');
-const { getPonytailInstructions } = require('../hooks/ponytail-instructions');
+const { getFallbackInstructions, getPonytailInstructions } = require('../hooks/ponytail-instructions');
 assert.equal(isShellSafe('C:\\Users\\x\\.claude\\plugins\\ponytail\\hooks\\ponytail-statusline.ps1'), true);
 assert.equal(isShellSafe('/home/u/.claude/plugins/ponytail/hooks/ponytail-statusline.sh'), true);
 assert.equal(isShellSafe('/tmp/a"&calc.exe&"/x.sh'), false);
@@ -173,6 +173,9 @@ assert.match(
   output.hookSpecificOutput.additionalContext,
   /PONYTAIL MODE ACTIVE — level: ultra/,
 );
+const workflowHeadings = /^## 1\. Explore the requirements\n[\s\S]*^## 2\. Choose a design\n[\s\S]*^## 3\. Make the smallest complete change\n[\s\S]*^## 4\. Verify and review\n/m;
+assert.match(output.hookSpecificOutput.additionalContext, workflowHeadings);
+assert.match(getFallbackInstructions('full'), workflowHeadings);
 
 result = run(
   'ponytail-mode-tracker.js',
@@ -203,6 +206,7 @@ for (const [prompt, mode] of [
   output = JSON.parse(result.stdout);
   assert.equal(output.hookSpecificOutput.hookEventName, 'UserPromptSubmit');
   assert.ok(output.hookSpecificOutput.additionalContext.endsWith(getPonytailInstructions(mode)));
+  assert.match(output.hookSpecificOutput.additionalContext, workflowHeadings);
 }
 
 // Querying bare @ponytail should report the active level ('lite') without resetting it to default ('ultra')

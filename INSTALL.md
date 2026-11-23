@@ -2,7 +2,7 @@
 
 Pick your agent below. Not listed? Most agents read [`AGENTS.md`](AGENTS.md): copy it into your project, or ask your agent to install [`skills/ponytail/SKILL.md`](skills/ponytail/SKILL.md) as a skill. Which files map to which agent: [Agent portability](docs/agent-portability.md).
 
-The Claude Code and Codex plugins (and the Cursor hooks) run two tiny Node.js lifecycle hooks, so `node` needs to be on your PATH (note for Nix/nvm users: it must be on the non-interactive shell's PATH). If it isn't, the skills still work, but every hook call shows a harmless `node: command not found` error; installing Node (or putting it on that PATH) makes it go away.
+The Claude Code and Codex plugins (and the Cursor hooks) run Node.js lifecycle hooks. Put `node` on the non-interactive shell's PATH. Without Node, the skills still work and the hooks report `node: command not found`.
 
 ## Claude Code
 
@@ -20,12 +20,14 @@ CodeBuddy installs the same plugin with the same two `/plugin` commands and swit
 
 ## Codex
 
+Once the workflow branch is published to GitHub, register this fork's marketplace and install the plugin.
+
 ```bash
-codex plugin marketplace add DietrichGebert/ponytail
-codex plugin add ponytail@ponytail
+codex plugin marketplace add Singjone/ponytail --ref feature/staged-workflow
+codex plugin add ponytail@ponytail-staged
 ```
 
-Run `codex` and open `/hooks`, review and trust its two lifecycle hooks, and start a new thread.
+Run `codex` and open `/hooks`. Review and trust the Ponytail hooks before starting a new thread. Enable only one Ponytail variant per session to avoid duplicate instructions.
 
 This same install also covers the Codex desktop app: restart the app after installing and it picks up the plugin.
 

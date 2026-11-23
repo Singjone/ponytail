@@ -41,7 +41,7 @@
   <strong>Ponytail 5: rebuilt from the ground up.</strong><br>
   <strong>-53% code &middot; -41% time &middot; -26% cost &middot; -45% tokens</strong><br>
   <strong>And yet: 98% of risky logic ships with a test.</strong> Without Ponytail: 68%.<br>
-  <sub>Benchmarked in Claude Code, the same agent with and without the skill: 39 tasks including a real FastAPI + React repo, Opus 5.5, 5 runs each. <a href="#numbers">Details</a>.</sub>
+  <sub>Upstream benchmark in Claude Code with and without the original skill, covering 39 tasks including a real FastAPI + React repo, Opus 5.5, and 5 runs each. <a href="#numbers">Details</a>.</sub>
 </p>
 
 <p align="center">
@@ -141,7 +141,7 @@ In Claude Code, ponytail now shows a band above the prompt: what the current tas
   <img src="assets/v5/ladder.png" width="880" alt="Before writing code, stop at the first rung that holds: 1 does this need to exist, 2 already in this codebase, 3 does the standard library do it, 4 a native platform feature, 5 an installed dependency, 6 can it be one line, 7 only then the minimum that works, plus one small test if it has logic.">
 </p>
 
-The ladder runs *after* it understands the problem, not instead of it: it reads the code the change touches and traces the real flow before picking a rung. Lazy about the solution, never about reading.
+This fork makes four phases explicit. Explore the requirements, choose a design that fits the existing architecture, apply the implementation ladder, then verify and review the result. Straightforward fixes can combine exploration and design. Substantial or high-risk changes call for an independent read-only review when an authorized reviewer is available.
 
 Lazy, not negligent: trust-boundary validation, data-loss handling, security, and accessibility are never on the chopping block.
 
@@ -162,14 +162,14 @@ Ponytail is one prompt: [`skills/ponytail/SKILL.md`](skills/ponytail/SKILL.md). 
 /plugin install ponytail@ponytail
 ```
 
-**Codex:**
+**Codex** (once the workflow branch is published):
 
 ```bash
-codex plugin marketplace add DietrichGebert/ponytail
-codex plugin add ponytail@ponytail
+codex plugin marketplace add Singjone/ponytail --ref feature/staged-workflow
+codex plugin add ponytail@ponytail-staged
 ```
 
-Then open `/hooks` in Codex, trust its two lifecycle hooks, and start a new thread.
+Then open `/hooks` in Codex, review and trust the Ponytail hooks, and start a new thread.
 
 **Any other agent:** copy [`AGENTS.md`](AGENTS.md) into your project, or ask your agent to install [`skills/ponytail/SKILL.md`](skills/ponytail/SKILL.md) as a skill. Step by step for Copilot, Cursor, OpenCode, Gemini and the rest: **[INSTALL.md](INSTALL.md)**.
 
@@ -177,7 +177,7 @@ That was it. He'd be proud. He won't say it.
 
 Active every session, with a handful of commands (see [Commands](#commands)). `/ponytail ultra` exists for when the codebase has wronged you personally. Startup and mode-change text shows the current mode.
 
-Only install ponytail from `DietrichGebert/ponytail` on GitHub or `@dietrichgebert/ponytail` on npm. It never ships `.exe` or `.dll` files; a copy that does is not mine.
+This fork's Codex marketplace points to `Singjone/ponytail` on GitHub. The upstream project is `DietrichGebert/ponytail` on GitHub and `@dietrichgebert/ponytail` on npm.
 
 ## Commands
 

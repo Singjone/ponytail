@@ -42,6 +42,12 @@ for (const [relPath, normalize] of copies) {
 // a rule's wording trips this, which is the reminder to propagate it everywhere.
 // Upgrade path: generate the copies from SKILL.md if this ever misses a real drift.
 const INVARIANTS = [
+  '## 1. Explore the requirements',
+  '## 2. Choose a design',
+  '## 3. Make the smallest complete change',
+  '## 4. Verify and review',
+  'Save the implementation ladder for phase 3',
+  'fresh, authorized, read-only reviewer',
   'in this codebase',                      // ladder rung: reuse what already exists (#217)
   'grep every caller',                     // root-cause bug fix (#245)
   'never about the change itself',         // scope: callers, tests and fixtures the change breaks

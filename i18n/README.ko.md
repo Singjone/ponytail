@@ -162,12 +162,7 @@ Ponytail은 프롬프트 하나다: [`skills/ponytail/SKILL.md`](../skills/ponyt
 
 **Codex:**
 
-```bash
-codex plugin marketplace add DietrichGebert/ponytail
-codex plugin add ponytail@ponytail
-```
-
-그다음 Codex에서 `/hooks`를 열어 라이프사이클 훅 두 개를 신뢰하고, 새 스레드를 시작한다.
+이 포크의 Codex 버전은 [설치 안내](../INSTALL.md#codex)를 따라 설치할 수 있습니다.
 
 **그 밖의 에이전트:** [`AGENTS.md`](../AGENTS.md)를 프로젝트에 복사하거나, 에이전트에게 [`skills/ponytail/SKILL.md`](../skills/ponytail/SKILL.md)를 스킬로 설치해 달라고 하면 된다. Copilot, Cursor, OpenCode, Gemini 등의 단계별 설치 방법(영어): **[INSTALL.md](../INSTALL.md)**.
 
@@ -175,7 +170,7 @@ codex plugin add ponytail@ponytail
 
 모든 세션에서 켜져 있고, 명령어가 몇 개 있다 ([명령어](#commands) 참고). `/ponytail ultra`는 코드베이스가 당신을 개인적으로 화나게 했을 때를 위한 것이다. 시작할 때와 모드를 바꿀 때 현재 모드가 표시된다.
 
-ponytail은 GitHub의 `DietrichGebert/ponytail`이나 npm의 `@dietrichgebert/ponytail`에서만 설치한다. `.exe`나 `.dll` 파일은 절대 들어 있지 않다. 그런 파일이 들어 있는 사본은 내 것이 아니다.
+업스트림 버전은 GitHub의 `DietrichGebert/ponytail`과 npm의 `@dietrichgebert/ponytail`에서 배포됩니다.
 
 <a id="commands"></a>
 ## 명령어

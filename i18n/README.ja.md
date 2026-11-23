@@ -162,12 +162,7 @@ Ponytail はひとつのプロンプトだ：[`skills/ponytail/SKILL.md`](../ski
 
 **Codex：**
 
-```bash
-codex plugin marketplace add DietrichGebert/ponytail
-codex plugin add ponytail@ponytail
-```
-
-そのあと Codex で `/hooks` を開き、二つのライフサイクルフックを信頼して、新しいスレッドを始める。
+このフォークの Codex 版は [インストール手順](../INSTALL.md#codex) に従って導入できます。
 
 **その他のエージェント：**[`AGENTS.md`](../AGENTS.md) をプロジェクトにコピーするか、エージェントに [`skills/ponytail/SKILL.md`](../skills/ponytail/SKILL.md) を skill としてインストールするよう頼む。Copilot、Cursor、OpenCode、Gemini などの手順（英語）：**[INSTALL.md](../INSTALL.md)**。
 
@@ -175,7 +170,7 @@ codex plugin add ponytail@ponytail
 
 毎セッション有効で、いくつかのコマンドがある（[コマンド](#commands)を参照）。`/ponytail ultra` は、コードベースに個人的に腹が立ったとき用だ。起動時とモード切り替え時に、現在のモードが表示される。
 
-ponytail は GitHub の `DietrichGebert/ponytail` か npm の `@dietrichgebert/ponytail` からだけインストールすること。`.exe` や `.dll` ファイルは決して含まれない。それを含むコピーは私のものではない。
+上流版の配布元は GitHub の `DietrichGebert/ponytail` と npm の `@dietrichgebert/ponytail` です。
 
 <a id="commands"></a>
 ## コマンド
